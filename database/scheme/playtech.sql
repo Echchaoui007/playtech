@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2022 at 10:12 PM
+-- Generation Time: Nov 16, 2022 at 03:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -53,6 +53,7 @@ CREATE TABLE `product` (
   `prod_lib` varchar(30) NOT NULL,
   `price` double NOT NULL DEFAULT 0,
   `qtty` int(11) NOT NULL DEFAULT 0,
+  `prod_img` text NOT NULL,
   `id_cat` int(11) NOT NULL DEFAULT 100000
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,12 +61,12 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_prod`, `prod_lib`, `price`, `qtty`, `id_cat`) VALUES
-(100004, 'Logitech G Pro HERO', 1300, 15, 100003),
-(100005, 'default', 0, 0, 100000),
-(100006, 'Keyboard MSI Pro', 1700, 15, 100003),
-(100007, 'PlayStation 5 Pro', 5999.99, 15, 100002),
-(100008, 'Xbox Series X ', 4999.99, 15, 100002);
+INSERT INTO `product` (`id_prod`, `prod_lib`, `price`, `qtty`, `prod_img`, `id_cat`) VALUES
+(100004, 'Logitech G Pro HERO', 1300, 15, 'test.jpg', 100003),
+(100005, 'default', 0, 0, 'test.jpg', 100000),
+(100006, 'Keyboard MSI Pro', 1700, 15, 'test.jpg', 100003),
+(100007, 'PlayStation 5 Pro', 5999.99, 15, 'test.jpg', 100002),
+(100008, 'Xbox Series X ', 4999.99, 15, 'test.jpg', 100002);
 
 -- --------------------------------------------------------
 
@@ -75,8 +76,10 @@ INSERT INTO `product` (`id_prod`, `prod_lib`, `price`, `qtty`, `id_cat`) VALUES
 
 CREATE TABLE `user` (
   `usr_id` int(11) NOT NULL,
+  `f_name` varchar(40) NOT NULL,
+  `l_name` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `pswd` varchar(60) NOT NULL,
+  `pswd` varchar(255) NOT NULL,
   `user_role` varchar(40) NOT NULL DEFAULT 'client'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,9 +87,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`usr_id`, `email`, `pswd`, `user_role`) VALUES
-(100000, 'test@test.t', '1234', 'client'),
-(100002, 'admin@test.t', '1234', 'admin');
+INSERT INTO `user` (`usr_id`, `f_name`, `l_name`, `email`, `pswd`, `user_role`) VALUES
+(100000, 'test', 'test', 'test@test.t', '1234', 'client'),
+(100002, 'test', 'test', 'admin@test.t', '1234', 'admin');
 
 --
 -- Indexes for dumped tables
