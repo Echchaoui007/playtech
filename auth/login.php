@@ -9,14 +9,9 @@
 
   <?php require_once "../includes/etc/css-cdn.php" ?>
 
-  <style>
-    input:autofill {
-      background: white;
-    }
-  </style>
 
 
-  <!-- Custom styles for this template -->
+
   <link href="../src/css/signin.css" rel="stylesheet">
 </head>
 
@@ -30,7 +25,7 @@
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
 
