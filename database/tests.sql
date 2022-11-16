@@ -77,7 +77,15 @@ VALUES (
     );
 
 ALTER TABLE
-    `user` MODIFY COLUMN user_role varchar(40) NOT NULL DEFAULT 'client' AFTER pswd;
+    `user` MODIFY COLUMN pswd varchar(255) NOT NULL ;
+
+ALTER TABLE
+    `user` ADD COLUMN f_name varchar(40) NOT NULL after usr_id;
+
+ALTER TABLE `product` ADD COLUMN `prod_img` TEXT NOT NULL AFTER qtty;
+
+UPDATE `product` set prod_img='test.jpg'
+
 
 
 
