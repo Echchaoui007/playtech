@@ -3,6 +3,7 @@
 SELECT * FROM category ;
 
 SELECT * FROM product ;
+SELECT * FROM product where prod_lib LIKE '%%';
 
 SELECT * FROM `user` ;
 
@@ -77,3 +78,6 @@ VALUES (
 
 ALTER TABLE
     `user` MODIFY COLUMN user_role varchar(40) NOT NULL DEFAULT 'client' AFTER pswd;
+
+
+
