@@ -22,6 +22,12 @@ function activateSelected($pageName)
                 <li class="nav-item">
                     <a class="nav-link <?php echo activateSelected('shop.php');?> " href="http://localhost/playTech/shop.php">Shop</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo activateSelected('about-us.php');?> " href="about-us.php">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo activateSelected('contact.php');?> " href="contact.php">Contact</a>
+                </li>
                 <div class="nav-item btn-group flex-column ms-sm-5">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-solid fa-user"></i>
