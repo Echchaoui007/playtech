@@ -14,19 +14,18 @@
     <div class="img-fluid">
         <img class="test" src="./assets/image/PS4.jpg" alt="" class="img-fluid">
     </div>
-    <!-- <div class="testt">
-    <img src="./assets/image/destiny.jpg" class="img-fluid">   
-    </div> -->
 
-    <div class="left">
+
+
+    <div class="container-fluid position-relative m-0 px-0">
+        <div class="text-center px-5  ">
+            <h2 class="h2  fw-semibold text-white pt-4 mb-4 mb-sm-5" class="text-light">About Us.</h2>
+            <h5 class="text-light fw-light  mb-5" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem quisquam debitis minus enim totam esse eos harum nisi expedita aliquid aspernatur iste, architecto consectetur amet? Sint necessitatibus soluta ipsum quod!</h5>
+        </div>
+        <div class="left">
+
+        </div>
         <div class="cards">
-            <div class="text">
-                <h5 class="h2 text-center text-white mb-4 mb-sm-5" class="text-light">About Us.</h5>
-                <p class="font-weight-light" class="text-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum ipsa,
-                    eos rerum ad vel cupiditate voluptatem quas <br>
-                    dolorem voluptatum assumenda tenetur.
-                    Accusantium magnam quidem quisquam nesciunt facilis dolores perspiciatis eligendi?</p>
-            </div>
             <div class="card" style="width: 18rem;">
                 <img src="./assets/image/destiny.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -61,6 +60,7 @@
     </div>
 
 
+<?php require_once "./includes/footer.php" ?>
 
 </body>
 
