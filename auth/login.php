@@ -15,17 +15,17 @@
   <link href="../src/css/signin.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body class="text-center text-bg-dark bg-gradient ">
 
   <main class="form-signin">
     <form>
-      <img class="mb-3" src="../assets/image/Logo.svg" alt="" width="210" height="65">
+      <img class="mb-3" src="../assets/image/Logo-dark.svg" alt="" width="210" height="65">
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control text-bg-dark" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control text-bg-dark " id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
 

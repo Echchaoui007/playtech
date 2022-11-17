@@ -10,6 +10,8 @@
 </head>
 <body>
     <?php require_once "includes/navbar.php" ?>
+
+    <h1 class="text-center mt-5">Echaoui's Task </h1>
 </body>
 <?php require_once "includes/etc/js-cdn.php"; ?>
 </html>

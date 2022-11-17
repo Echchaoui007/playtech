@@ -94,7 +94,6 @@
     <?php require_once "includes/footer.php" ?>
 
     <?php require_once "includes/etc/js-cdn.php" ?>
-    <script src="src/js/test.js"></script>
 
 </body>
 
