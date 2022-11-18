@@ -1,11 +1,15 @@
 <?php
-$isAdmin = false; // for testing purposes
+$isAdmin = true; // for testing purposes
+
+
 if ($isAdmin) {
 } else {
     header("HTTP/1.1 403 Forbidden");
     require_once "../includes/etc/error.php";
     die(403);
 }
+
+require "managment.php";
 ?>
 
 
@@ -21,6 +25,12 @@ if ($isAdmin) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <?php require_once "../includes/etc/css-cdn.php" ?>
+
+    <style>
+        tr:hover {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="bg-dark bg-opacity-75">
@@ -32,11 +42,14 @@ if ($isAdmin) {
 
     </div>
     <div class="container-sm d-flex justify-content-center mb-2 ">
-        <div class="btn-group " role="group" aria-label="Basic mixed styles example">
-            <button type="button" class="btn btn-success btn">Add</button>
-            <button type="button" class="btn btn-warning">Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
-        </div>
+        <form action="operate.php" method="post">
+            <div class="btn-group " role="group" id="controls" aria-label="Basic mixed styles example">
+                <a type="submit" href="createEdit.php" class="btn btn-success btn">Add</a>
+                <a type="submit" href="createEdit.php" class="btn btn-warning">Edit</a>
+
+                <button type="submit" name="delete" id="btn-delete" value="" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
     </div>
     <div class="table-responsive mx-md-5">
         <table class="table table-dark table-hover ">
@@ -51,17 +64,21 @@ if ($isAdmin) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($variable as $key => $value) {
+                <?php foreach (getProducts() as $row) {
                 ?>
                     <tr class="">
-                        <td scope="row">R1C1</td>
-                        <td>R1C2</td>
-                        <td>R1C3</td>
+                        <td scope="row"><?php echo $row["id_prod"]; ?></td>
+                        <td><?php echo $row["prod_lib"]; ?></td>
+                        <td><?php echo $row["price"]; ?></td>
+                        <td><?php echo $row["qtty"]; ?></td>
+                        <td><?php echo $row["cat_lib"]; ?></td>
+                        <td><img width="128px" height="128px" src="<?php echo "../download/" . $row["prod_img"]; ?>" class="img-fluid" alt="product image"></td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
+    <?php require_once "../includes/footer.php" ?>
 
     <?php require_once "../includes/etc/js-cdn.php" ?>
     <script src="../src/js/dashboard.js"></script>
