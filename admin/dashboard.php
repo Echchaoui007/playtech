@@ -2,9 +2,8 @@
 $isAdmin = true; // for testing purposes
 
 
-if ($isAdmin) {
-} else {
-    header("HTTP/1.1 403 Forbidden");
+if (!$isAdmin) {
+    header("HTTP/1.1 404 Forbidden");
     require_once "../includes/etc/error.php";
     die(403);
 }
@@ -43,11 +42,10 @@ require "managment.php";
     </div>
     <div class="container-sm d-flex justify-content-center mb-2 ">
         <form action="operate.php" method="post">
-            <div class="btn-group " role="group" id="controls" aria-label="Basic mixed styles example">
-                <a type="submit" href="createEdit.php" class="btn btn-success btn">Add</a>
-                <a type="submit" href="createEdit.php" class="btn btn-warning">Edit</a>
-
-                <button type="submit" name="delete" id="btn-delete" value="" class="btn btn-danger">Delete</button>
+            <div class="btn-group btn-group-lg" role="group" id="controls" aria-label="Basic mixed styles example">
+                <a href="createEdit.php?add" class="btn btn-success btn rounded-pill rounded-end ">Add</a>
+                <a id="edit-link" class="btn btn-warning text-white disabled">Edit</a>
+                <button type="submit" name="delete" id="btn-delete" value="-1" class="btn  btn-danger rounded-pill rounded-start disabled">Delete</button>
             </div>
         </form>
     </div>

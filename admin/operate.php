@@ -1,13 +1,21 @@
 <?php
 
-include "managment.php";
+$isAdmin = true;
 
-print_r($_POST);
-if (isset($_POST["delete"])) {
-    echo "sss";
-    deleteProductById($_POST["delete"]);
-}
-if (isset($_POST["update"])) {
 
-    updateProductById($p_id);
+if($isAdmin) {
+    include "managment.php";
+
+    if (isset($_POST["delete"])) {
+        echo "is Delete";
+        deleteProductById($_POST["delete"]);
+    }
+    if (isset($_POST["update"])) {
+        echo "is update";
+        updateProductById($p_id);
+    }
+    if (isset($_POST["update"])) {
+        echo "is update";
+        updateProductById($p_id);
+    }
 }
