@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST["submit"])) {
     require "uploads.php";
-    uploadProdImg($_FILES["myfile"]);
+    uploadProdImg($_FILES["myfile"],null);
 }else{
     echo "you"; 
 }
