@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="label" type="text" class="form-control form-control-lg text-bg-dark    " />
+                                    <input name="label" type="text" class="form-control form-control-lg text-bg-dark    " required />
 
                                 </div>
 
@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="price" type="number" class="form-control form-control-lg text-bg-dark  " />
+                                    <input name="price" type="number" class="form-control form-control-lg text-bg-dark  "  required/>
 
                                 </div>
 
@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " />
+                                    <input name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " required/>
 
                                 </div>
 
@@ -87,7 +87,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <select name="category" class="form-select text-bg-dark " aria-label="Disabled select example">
+                                    <select name="category" class="form-select text-bg-dark " aria-label="Disabled select example" required>
                                         <option selected>Open this select menu</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -110,7 +110,7 @@ if (isset($_POST["submit"])) {
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="upload poster" class="form-control form-control-lg text-bg-dark    " id="formFileLg" type="file" />
+                                    <input required name="upload poster" class="form-control form-control-lg text-bg-dark    " id="formFileLg" type="file" />
                                     <div class="small text-muted mt-2">Upload image of the product </div>
 
                                 </div>
