@@ -37,12 +37,12 @@ if (isset($_POST["submit"])) {
                             <div class="row align-items-center pt-4 pb-3">
                                 <div class="col-md-3 ps-5">
 
-                                    <h6 class="mb-0">Label</h6>
+                                    <label class="mb-0" for="label">Label</label>
 
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="label" type="text" class="form-control form-control-lg text-bg-dark    " required />
+                                    <input id="label" name="label" type="text" class="form-control form-control-lg text-bg-dark    " required />
 
                                 </div>
 
@@ -52,12 +52,12 @@ if (isset($_POST["submit"])) {
                             <div class="row align-items-center pt-4 pb-3">
                                 <div class="col-md-3 ps-5">
 
-                                    <h6 class="mb-0">Price</h6>
+                                    <label class="mb-0" for="price">Price</label>
 
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="price" type="number" class="form-control form-control-lg text-bg-dark  "  required/>
+                                    <input id="price" name="price" type="number" class="form-control form-control-lg text-bg-dark  "  required/>
 
                                 </div>
 
@@ -67,12 +67,12 @@ if (isset($_POST["submit"])) {
                             <div class="row align-items-center pt-4 pb-3">
                                 <div class="col-md-3 ps-5">
 
-                                    <h6 class="mb-0">Quantity</h6>
+                                    <label class="mb-0" for="quantity">Quantity</label>
 
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <input name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " required/>
+                                    <input id="quantity" name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " required/>
 
                                 </div>
 
@@ -82,12 +82,12 @@ if (isset($_POST["submit"])) {
                             <div class="row align-items-center pt-4 pb-3">
                                 <div class="col-md-3 ps-5">
 
-                                    <h6 class="mb-0">Category</h6>
+                                    <label for="category" class="mb-0">Category</label>
 
                                 </div>
                                 <div class="col-md-9 pe-5">
 
-                                    <select name="category" class="form-select text-bg-dark " aria-label="Disabled select example" required>
+                                    <select id="category" name="category" class="form-select text-bg-dark " aria-label="Disabled select example" required>
                                         <option selected>Open this select menu</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -105,7 +105,7 @@ if (isset($_POST["submit"])) {
                             <div class="row align-items-center py-3">
                                 <div class="col-md-3 ps-5">
 
-                                    <h6 class="mb-0">Upload Poster</h6>
+                                    <label class="mb-0">Upload Poster</label>
 
                                 </div>
                                 <div class="col-md-9 pe-5">
