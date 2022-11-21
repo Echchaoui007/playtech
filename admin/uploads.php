@@ -20,11 +20,7 @@ function uploadProdImg($fileToUpload, $id_prod)
     // Check if image file is a actual image or fake image
     if (isset($_POST["submit"])) {
         $check = getimagesize($fileToUpload["tmp_name"]);
-        if ($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-
+        if ($check == false) {
             echo "File is not an image.";
             $uploadOk = 0;
         }
