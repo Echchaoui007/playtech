@@ -26,3 +26,12 @@ function updateProductById($p_id)
 {
     //to implement
 }
+
+function addProduct($libel, $quatity, $price, $image, $category)
+{
+    global $conn;
+    uploadProdImg($image, null);
+    $sql = "INSERT INTO product(prod_lib, price, qtty,prod_img, id_cat) VALUES ( , , , ,);";
+    // $conn->query();
+    $conn->close();
+}

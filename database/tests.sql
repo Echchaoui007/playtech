@@ -48,7 +48,7 @@ VALUES (
 INSERT INTO
     product(prod_lib, price, qtty, id_cat)
 VALUES (
-        "Logitech G Pro HERO",
+        "Logitech D Pro HERO",
         1300,
         15,
         100003
@@ -66,12 +66,12 @@ CREATE Table
 
 ALTER Table user AUTO_INCREMENT=100000;
 
-INSERT INTO `user`(email,pswd) VALUES ("test@test.t","1234");
+INSERT INTO `user`(email,pswd) VALUES ("test2@test.t","1234");
 
 INSERT INTO
     `user`(email, pswd, user_role)
 VALUES (
-        "admin@test.t",
+        "admin_2@test.t",
         "1234",
         "admin"
     );
@@ -84,8 +84,12 @@ ALTER TABLE
 
 ALTER TABLE `product` ADD COLUMN `prod_img` TEXT NOT NULL AFTER qtty;
 
-UPDATE `product` set prod_img='test.jpg'
+UPDATE `product` set prod_img='test.jpg';
 
+DROP PROCEDURE `getCurrId`;
+CREATE PROCEDURE getCurrId()
+BEGIN
+SELECT `AUTO_INCREMENT` as curr_id FROM INFORMATION_SCHEMA.TABLES WHERE `TABLE_SCHEMA` = DATABASE() AND `TABLE_NAME` = 'product';
+END;
 
-
-
+call getCurrId();
