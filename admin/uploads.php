@@ -1,8 +1,8 @@
 
 <?php
 //uploads file with prod_$id_prod 
-//ex : prod_10004.png
-require "../auth/onlyAdmin.php";
+// ex : prod_10004.png
+// require "../auth/onlyAdmin.php";
 function uploadProdImg($fileToUpload, $id_prod)
 {
     // set $id_ prod to next auto_increment value if null

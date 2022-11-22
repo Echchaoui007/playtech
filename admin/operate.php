@@ -1,7 +1,7 @@
 <?php
 
 
-require "../auth/onlyAdmin.php";
+// require "../auth/onlyAdmin.php";
 
     include "managment.php";
 
@@ -14,8 +14,8 @@ require "../auth/onlyAdmin.php";
         updateProductById($_POST,$_FILES["image"]);
     }
     if (isset($_POST["create"])) {
-        echo "is update";
-        // addProduct();
+
+        addProduct($_POST,$_FILES["image"]);
     }
     header("location: dashboard.php");
 
