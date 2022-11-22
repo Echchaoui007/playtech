@@ -6,7 +6,6 @@
     include "managment.php";
 
     if (isset($_POST["delete"])) {
-        echo "is Delete";
         deleteProductById($_POST["delete"]);
     }
     if (isset($_POST["update"])) {
