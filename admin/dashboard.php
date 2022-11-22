@@ -1,13 +1,4 @@
 <?php
-$isAdmin = true; // for testing purposes
-
-
-if (!$isAdmin) {
-    header("HTTP/1.1 404 Forbidden");
-    require_once "../includes/etc/error.php";
-    die(403);
-}
-
 require "managment.php";
 ?>
 
@@ -70,7 +61,7 @@ require "managment.php";
                         <td><?php echo $row["price"]; ?></td>
                         <td><?php echo $row["qtty"]; ?></td>
                         <td><?php echo $row["cat_lib"]; ?></td>
-                        <td><img width="128px" height="128px" src="<?php echo "../download/" . $row["prod_img"]; ?>" class="img-fluid" alt="product image"></td>
+                        <td><img style="width:128px;height:128px;object-fit: contain;"  src="<?php echo "../download/" . $row["prod_img"]; ?>" class="img-fluid" alt="product image"></td>
                     </tr>
                 <?php } ?>
             </tbody>
