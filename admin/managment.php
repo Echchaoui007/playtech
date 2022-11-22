@@ -1,5 +1,5 @@
 <?php
-require "../auth/onlyAdmin.php";
+// require "../auth/onlyAdmin.php";
 
 function getProducts()
 {
@@ -40,6 +40,8 @@ function deleteProductById($p_id)
 {
     include "../database/connection.php";
 
+    $conn->query("delete from product where id_prod= $p_id");
+    $conn->close();
     //to implement
 }
 function updateProductById($p,$p_img)
