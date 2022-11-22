@@ -9,7 +9,7 @@ SELECT * FROM `user` ;
 
 -- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-DELETE FROM product ;
+DELETE FROM product WHERE id_prod =100009 ;
 
 -- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -93,3 +93,9 @@ SELECT `AUTO_INCREMENT` as curr_id FROM INFORMATION_SCHEMA.TABLES WHERE `TABLE_S
 END;
 
 call getCurrId();
+select * from product where id_prod = 100006;
+
+
+UPDATE product SET prod_img ="test2.jpg",prod_lib ="test2.jpg" WHERE id_prod =12;
+
+select * from user where email = "admin@test.t" and pswd = "1234";

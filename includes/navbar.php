@@ -1,4 +1,7 @@
 <?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 $root = $_SERVER["SERVER_NAME"];
 function activateSelected($pageName)
 {
@@ -34,10 +37,17 @@ function activateSelected($pageName)
                         <i class="fa fa-solid fa-user"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-sm-end">
+                        <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["user_role"] =="admin"){ ?>
                         <li><a class="dropdown-item <?php echo activateSelected('dashboard.php');?> " href="http://<?php echo $root; ?>/playTech/admin/dashboard.php">Dashboard</a></li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="http://<?php echo $root; ?>/playTech/auth/login.php" id="login-out">Login</a></li>
-                        <li><a class="dropdown-item" href="http://<?php echo $root ?>/playTech/auth/signup.php" id="sign-up">Sign Up</a></li>
+                        <?php } ?>
+                        <?php if(isset($_SESSION["user"])){ ?>
+                            
+                            <li><a class="dropdown-item" href="http://<?php echo $root; ?>/playTech/auth/logout.php" > Logout </a></li>
+                            <?php }else{ ?>
+                                <li><a class="dropdown-item" href="http://<?php echo $root; ?>/playTech/auth/login.php" id="login-in"> Login </a></li>
+                                <li><a class="dropdown-item" href="http://<?php echo $root ?>/playTech/auth/signup.php" id="sign-up">Sign Up</a></li>
+                                <?php } ?>
                     </ul>
                 </div>
             </ul>
