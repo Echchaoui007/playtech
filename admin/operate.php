@@ -1,9 +1,8 @@
 <?php
 
-$isAdmin = true;
 
+require "../auth/onlyAdmin.php";
 
-if($isAdmin) {
     include "managment.php";
 
     if (isset($_POST["delete"])) {
@@ -11,12 +10,12 @@ if($isAdmin) {
         deleteProductById($_POST["delete"]);
     }
     if (isset($_POST["update"])) {
-        echo "is update";
-        updateProductById($p_id);
+
+        updateProductById($_POST,$_FILES["image"]);
     }
     if (isset($_POST["create"])) {
         echo "is update";
         // addProduct();
     }
     header("location: dashboard.php");
-}
+

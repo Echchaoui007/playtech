@@ -1,10 +1,17 @@
 <?php
+require "../auth/onlyAdmin.php";
+include "managment.php";
+$product = null;
+
 if (isset($_GET["add"])) {
     $title =  "Add";
     $operation = "create";
 } else {
     $title =  "Edit";
     $operation = "update";
+    if (isset($_GET["id"]) && $_GET["id"] = !null) {
+        $product = getProductById($_REQUEST["id"]);
+    }
 }
 
 ?>
@@ -33,8 +40,9 @@ if (isset($_GET["add"])) {
 <body class="bg-dark">
     <?php require_once "../includes/navbar.php" ?>
 
-    <form action="operate.php" method="post">
+    <form action="operate.php" method="post" enctype="multipart/form-data">
         <input type="text" name="<?php echo $operation ?>" hidden>
+        <input type="text" name="id" value="<?php echo $product["id_prod"]  ?>" hidden>
         <section class="">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -53,7 +61,9 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input id="label" name="label" type="text" class="form-control form-control-lg text-bg-dark    " required />
+                                        <input value="<?php if ($product !=null) {
+                                            echo $product["prod_lib"];
+                                        } ?>" id="label" name="label" type="text" class="form-control form-control-lg text-bg-dark    " required />
 
                                     </div>
 
@@ -68,7 +78,9 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input id="price" name="price" type="number" class="form-control form-control-lg text-bg-dark  " required />
+                                        <input value="<?php if ($product !=null) {
+                                            echo $product["price"];
+                                        } ?>" id="price" name="price" type="number" class="form-control form-control-lg text-bg-dark  " required />
 
                                     </div>
 
@@ -83,7 +95,9 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input id="quantity" name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " required />
+                                        <input value="<?php if ($product !=null) {
+                                            echo $product["qtty"];
+                                        } ?>" id="quantity" name="quantity" type="number" class="form-control form-control-lg text-bg-dark   " required />
 
                                     </div>
 
@@ -99,12 +113,14 @@ if (isset($_GET["add"])) {
                                     <div class="col-md-9 pe-5">
 
                                         <select id="category" name="category" class="form-select text-bg-dark " aria-label="Disabled select example" required>
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <?php foreach (getCategories() as $cat) { ?>
+                                                <option value="<?php echo $cat["id_cat"]  ?>" <?php if ($product !=null) {
+                                                    if ($cat["id_cat"] == $product["id_cat"]) {
+                                                        echo "selected";
+                                                    }
+                                                } ?>><?php echo $cat["cat_lib"] ?></option>
+                                            <?php } ?>
                                         </select>
-
                                     </div>
 
                                 </div>
@@ -121,7 +137,7 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input required name="upload poster" class="form-control form-control-lg text-bg-dark    " id="formFileLg" type="file" />
+                                        <input required name="image" class="form-control form-control-lg text-bg-dark    " id="formFileLg" type="file" />
                                         <div class="small text-muted mt-2">Upload image of the product </div>
 
                                     </div>
