@@ -15,6 +15,9 @@ require "managment.php";
     <?php require_once "../includes/etc/css-cdn.php" ?>
 
     <style>
+        body {
+            background: linear-gradient(#222,#111) !important;
+        }
         tr:hover {
             cursor: pointer;
         }
