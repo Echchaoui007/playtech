@@ -1,8 +1,5 @@
 <?php
 
-
-// require "../auth/onlyAdmin.php";
-
     include "managment.php";
 
     if (isset($_POST["delete"])) {

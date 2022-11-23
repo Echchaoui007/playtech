@@ -1,5 +1,4 @@
 <?php
-// require "../auth/onlyAdmin.php";
 include "managment.php";
 $product = null;
 
@@ -80,7 +79,7 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input value="<?php if ($product != null) {
+                                        <input step="0.01" value="<?php if ($product != null) {
                                                             echo $product["price"];
                                                         } ?>" id="price" name="price" type="number" class="form-control form-control-lg text-bg-dark  " required />
 

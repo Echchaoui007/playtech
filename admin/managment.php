@@ -1,5 +1,5 @@
 <?php
-// require "../auth/onlyAdmin.php";
+require "../auth/onlyAdmin.php";
 
 function getProducts()
 {
