@@ -7,8 +7,7 @@ tr.on("click", function () {
    $("#btn-delete").val(selectedId)
 
    $("#edit-link").attr("href",`createEdit.php?edit&id=${selectedId}`)
-   
-   $("html,body").animate({scrollTop: $("#controls").offset().top})
+
 })
 
 tr.one("click",function() {
