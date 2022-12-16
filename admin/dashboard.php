@@ -32,7 +32,7 @@ require "managment.php";
         <h2 class="h2">Products Manager</h2>
 
     </div>
-    <div class="container-sm d-flex justify-content-center mb-2 ">
+    <div class="container-sm d-flex justify-content-center mb-2 position-sticky" style="top: 10px;">
         <form action="operate.php" method="post">
             <div class="btn-group btn-group-lg" role="group" id="controls" aria-label="Basic mixed styles example">
                 <a href="createEdit.php?add" class="btn btn-success btn rounded-pill rounded-end ">Add</a>
