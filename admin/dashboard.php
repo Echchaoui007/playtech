@@ -28,14 +28,14 @@ require "managment.php";
     <?php require_once "../includes/navbar.php" ?>
 
 
-    <div class="text-light container text-center my-5">
+    <div class="text-light container text-center my-4">
         <h2 class="h2">Products Manager</h2>
 
     </div>
-    <div class="container-sm d-flex justify-content-center mb-2 ">
+    <div class="container-sm d-flex justify-content-center mb-2 position-sticky sticky-top">
         <form action="operate.php" method="post">
-            <div class="btn-group btn-group-lg" role="group" id="controls" aria-label="Basic mixed styles example">
-                <a href="createEdit.php?add" class="btn btn-success btn rounded-pill rounded-end ">Add</a>
+            <div class="btn-group btn-group-lg mt-3 " role="group" id="controls" aria-label="Basic mixed styles example">
+                <a href="createEdit.php?add" class="btn btn-success btn rounded-pill rounded-end">Add</a>
                 <a id="edit-link" class="btn btn-warning text-white disabled">Edit</a>
                 <button type="submit" name="delete" id="btn-delete" value="-1" class="btn  btn-danger rounded-pill rounded-start disabled">Delete</button>
             </div>
