@@ -138,7 +138,10 @@ if (isset($_GET["add"])) {
                                     </div>
                                     <div class="col-md-9 pe-5">
 
-                                        <input required name="image" class="form-control form-control-lg text-bg-dark    " id="formFileLg" type="file" />
+                                        <input name="image" class="form-control form-control-lg text-bg-dark " id="formFileLg" type="file" <?php
+                                        if (isset($_GET["add"]))
+                                            echo 'required';
+                                        ?> />
                                         <div class="small text-muted mt-2">Upload image of the product </div>
 
                                     </div>

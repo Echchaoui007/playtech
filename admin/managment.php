@@ -48,9 +48,18 @@ function updateProductById($p, $p_img)
 {
     include "../database/connection.php";
     include "uploads.php";
-    $img_name = uploadProdImg($p_img, $p["id"]);
-    $statment = $conn->prepare("update product set prod_lib = ? ,price = ? ,qtty = ? ,id_cat = ? ,prod_img = ? where id_prod = ? ");
-    $statment->bind_param("sdiisi", $label, $price, $quatity, $category, $img_name, $id);
+
+    if ($p_img != null && ($p_img['name']?? false)) {
+        $img_name = uploadProdImg($p_img, $p["id"]);
+        $sql = "update product set prod_lib = ? ,price = ? ,qtty = ? ,id_cat = ? ,prod_img = ? where id_prod = ? ;";
+        $statment = $conn->prepare($sql);
+        $statment->bind_param("sdiisi", $label, $price, $quatity, $category, $img_name, $id);
+    } else {
+        $sql = "update product set prod_lib = ? ,price = ? ,qtty = ? ,id_cat = ? where id_prod = ? ;";
+        $statment = $conn->prepare($sql);
+        $statment->bind_param("sdiii", $label, $price, $quatity, $category, $id);
+    }
+
     $label = $p["label"];
     $quatity = $p["quantity"];
     $price = $p["price"];
@@ -60,13 +69,13 @@ function updateProductById($p, $p_img)
     $conn->close();
 }
 
-function addProduct($p,$image)
+function addProduct($p, $image)
 {
     include "../database/connection.php";
     include "uploads.php";
 
     $img = uploadProdImg($image, null);
-    
+
     $sql = "INSERT INTO product(prod_lib, price, qtty, id_cat,prod_img) VALUES (? ,? ,? ,? ,?);";
     // values
     $statment = $conn->prepare($sql);
@@ -76,9 +85,9 @@ function addProduct($p,$image)
     $price = $p["price"];
     $category = $p["category"];
     $img_name = $img;
-    
+
     $statment->execute();
-    
+
     // $conn->query();
     $conn->close();
 }
