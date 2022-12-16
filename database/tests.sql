@@ -1,4 +1,4 @@
--- Active: 1668524025414@@127.0.0.1@3306@playtech
+-- Active: 1668524884613@@127.0.0.1@3306@playtech
 
 SELECT * FROM category ;
 
